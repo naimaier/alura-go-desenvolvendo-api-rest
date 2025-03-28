@@ -8,8 +8,8 @@ import (
 
 func main() {
 	model.Personalidades = []model.Personalidade{
-		{Nome: "Nome1", Historia: "Historia1"},
-		{Nome: "Nome2", Historia: "Historia2"},
+		{Id: 1, Nome: "Nome1", Historia: "Historia1"},
+		{Id: 2, Nome: "Nome2", Historia: "Historia2"},
 	}
 	fmt.Println("Iniciando o servidor REST")
 	routes.HandleRequests()
