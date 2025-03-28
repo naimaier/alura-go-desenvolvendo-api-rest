@@ -2,6 +2,7 @@ package routes
 
 import (
 	"api/controller"
+	"api/middleware"
 	"log"
 	"net/http"
 
@@ -10,6 +11,7 @@ import (
 
 func HandleRequests() {
 	r := mux.NewRouter()
+	r.Use(middleware.ContentTypeMiddleware)
 	r.HandleFunc("/", controller.Home)
 	r.HandleFunc("/api/personalidades", controller.TodasPersonalidades).Methods("GET")
 	r.HandleFunc("/api/personalidades/{id}", controller.RetornaUmaPersonalidade).Methods("GET")
